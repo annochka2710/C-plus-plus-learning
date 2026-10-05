@@ -1,0 +1,27 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "cmake --preset clang-debug; if ($?) { cmake --build --preset clang-debug }",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": "$gcc",
+            "group": "build"
+        },
+        {
+            // Ctrl+Shift+B: build and run, no debugger needed
+            "label": "run",
+            "type": "shell",
+            "command": "${workspaceFolder}/build/debug/main.exe",
+            "dependsOn": "build",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}

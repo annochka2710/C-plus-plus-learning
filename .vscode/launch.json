@@ -1,0 +1,15 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            // requires the CodeLLDB extension (vadimcn.vscode-lldb)
+            "name": "Debug main",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/debug/main.exe",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "preLaunchTask": "build"
+        }
+    ]
+}
