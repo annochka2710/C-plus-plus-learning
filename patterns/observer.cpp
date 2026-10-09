@@ -10,7 +10,8 @@ class IReader {
 public:
     virtual void recv(const Message& m) = 0;
 };
-
+// отправитель
+// не знает конкретный класс получателя
 class Writer {
 public:
     Writer(IReader* reader) : reader_(reader) {
@@ -20,6 +21,7 @@ public:
             q_.push(m);
         }
     }
+    // отправитель умеет принимать сообщение
     void send(const Message &m) {
         if(reader_) {
             reader_->recv(m);
