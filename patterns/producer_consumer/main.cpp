@@ -2,24 +2,27 @@
 #include "reader.h"
 #include "writer.h"
 
-int main() 
+int main()
 {
-    Transponder transponder; // принимает от reader и выдаёт в writer
-    Reader reader; // читает числа из cin
-    Writer writer; // читает от transponder
+    // Цепочка передачи данных:
+    //   cin -> Reader -> Transponder -> Writer -> cout
+    Reader reader;            // источник: читает числа из cin
+    Transponder transponder;  // посредник: принимает данные и передаёт дальше
+    Writer writer;            // приёмник: печатает в cout
 
-    // Подписка
+    // Подписка: соединяем звенья цепочки
     Binder::connect(reader, transponder);
     Binder::connect(transponder, writer);
-    
-    // Чтение из стандартного потока ввода cin
-    while(reader.exec()) {
-        transponder.exec();
+
+    // Режим 1 - эхо: каждое прочитанное число сразу уходит дальше по цепочке
+    while (reader.readNext()) {
+        transponder.forwardQueued();
     }
 
-    // Симуляция выдачи по таймеру в канал 0 и канал 1
-    transponder.simulateCallBack0(42);
-    transponder.simulateCallBack1(2026);
+    // Режим 2 - выдача по таймеру: значение приходит не из cin,
+    // а от "железа" (Word), как будто сработало прерывание
+    transponder.onTimer0(42);
+    transponder.onTimer1(2026);
 
     return 0;
 }

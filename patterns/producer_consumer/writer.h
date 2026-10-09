@@ -7,7 +7,7 @@
 // Приемник
 class Writer : public Consumer {
 public:
-    void show(int value, int channel) override {
+    void receive(int value, int channel) override {
         std::cout << "Writer: " << value << " - " << channel << std::endl;
     }
 };

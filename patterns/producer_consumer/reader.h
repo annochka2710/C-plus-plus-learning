@@ -7,8 +7,8 @@
 // Источник или отправитель
 class Reader : public Producer {
 public:
-    // читаем одно число
-    bool exec() {
+    // читаем одно число и рассылаем его; false - если ввод закончился
+    bool readNext() {
         int value;
         if(std::cin >> value) {
             // четные в канал 0, нечетные - в 1

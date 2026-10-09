@@ -31,7 +31,7 @@ public:
     virtual ~Consumer() = default;
 
     // что приемник делает с полученными данным
-    virtual void show(int value, int channel) = 0;
+    virtual void receive(int value, int channel) = 0;
 protected:
     Consumer() = default;
     Consumer(const Consumer&) = default; 
@@ -47,7 +47,7 @@ public:
     // на отправителя подписываем лямбду
     static void connect(Producer& prod, Consumer& cons) {
         prod.subscribe([&](int value, int channel){
-            cons.show(value, channel);
+            cons.receive(value, channel);
         });
     }
 };
