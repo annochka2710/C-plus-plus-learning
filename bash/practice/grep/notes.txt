@@ -1,0 +1,2 @@
+Linux command practice.
+Compare case-sensitive and case-insensitive searches.

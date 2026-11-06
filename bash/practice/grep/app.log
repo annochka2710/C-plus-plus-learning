@@ -1,0 +1,9 @@
+INFO application started
+INFO loading config
+WARNING disk space low
+ERROR connection failed
+INFO retry scheduled
+error request timed out
+INFO error_count=2
+ERRORS summary available
+INFO application stopped
