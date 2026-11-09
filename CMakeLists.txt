@@ -13,3 +13,4 @@ target_include_directories(main PRIVATE ${CMAKE_SOURCE_DIR})
 target_compile_options(main PRIVATE -Wall -Wextra -Wpedantic -Wshadow -Wconversion)
 
 add_subdirectory(c89-90)
+add_subdirectory(c++98)
