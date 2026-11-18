@@ -1,6 +1,9 @@
 #include <functional>
 #include <iostream>
 
+// C++11. Подробная теория: ../c++11/functional/notes.md
+// Самостоятельная практика: ../c++11/functional/practice.md
+
 namespace simple_function {
 void print(int index) {
     while (index--) {

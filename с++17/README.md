@@ -24,6 +24,7 @@
 - [ ] `std::string_view` — представление строки без владения и время жизни данных.
 - [ ] `std::filesystem` — пути, каталоги и операции с файлами.
 - [ ] `std::invoke` и `std::apply` — вызов функций и распаковка кортежей.
+  Подготовка: [обработчики и указатели на методы в C++11](../c++11/functional/notes.md).
 - [ ] `std::from_chars`, `std::to_chars` — преобразование чисел и текста.
 - [ ] `std::clamp`, `std::gcd`, `std::lcm` и `std::byte`.
 - [ ] `try_emplace`, `insert_or_assign`, `extract` и `merge` у ассоциативных контейнеров.

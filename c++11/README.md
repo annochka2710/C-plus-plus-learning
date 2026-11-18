@@ -33,9 +33,26 @@
 
 - [ ] `std::unique_ptr`, `std::shared_ptr`, `std::weak_ptr`, `std::make_shared` — владение ресурсами.
 - [ ] `std::array`, `std::tuple`, `std::unordered_map`, `std::unordered_set`.
-- [ ] `std::function`, `std::bind`, `std::reference_wrapper`.
+- [x] [std::function, std::bind и делегаты](functional/notes.md) — теория,
+  [примеры](functional/examples.cpp) и [практика](functional/practice.md);
+  `std::ref`, `std::cref`, время жизни обработчиков.
 - [ ] `emplace` и `emplace_back` — создание элементов на месте.
 - [ ] `std::chrono`, `<random>` и `std::to_string`.
 - [ ] `std::thread`, мьютексы, `std::lock_guard`, `std::unique_lock`, `std::condition_variable`.
 - [ ] `std::atomic`, гонки данных и основы модели памяти.
 - [ ] `std::async`, `std::future`, `std::promise` — получение результатов асинхронных задач.
+
+Отметка у модуля означает, что материалы подготовлены.
+Самостоятельное выполнение практики отмечается отдельно.
+
+## Сборка примеров C++11
+
+Из корня проекта:
+
+```bash
+cmake -S . -B build
+cmake --build build --target cpp11_functional_examples
+./build/c++11/functional/cpp11_functional_examples
+```
+
+Цель собирается в режиме C++11 независимо от стандарта основной программы.
