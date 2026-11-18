@@ -9,7 +9,8 @@
 - [ ] `nullptr` — нулевой указатель и отличие от `NULL`.
 - [ ] Инициализация через `{}`, запрет сужающих преобразований и `std::initializer_list`.
 - [ ] Range-based `for` — обход коллекций, значения и ссылки в цикле.
-- [ ] Лямбды — параметры, захваты по значению и по ссылке, время жизни данных.
+- [x] [Лямбды](functional/lambdas.md) — параметры, захваты по значению и по ссылке,
+  `mutable`, время жизни данных, примеры и упражнения.
 - [ ] Rvalue-ссылки, семантика перемещения и `std::move`.
 - [ ] Правило пяти: копирующие и перемещающие операции, деструктор.
 - [ ] `std::forward` и передача аргументов с сохранением категории значения.
@@ -26,7 +27,7 @@
 В C++11 появилось его применение к лямбдам.
 
 - [x] Поля класса: разрешение изменять поле в `const`-методе, например кеш результата.
-- [ ] Лямбды: разрешение изменять захваченные по значению копии внутри лямбды;
+- [x] [Лямбды](functional/lambdas.md): разрешение изменять захваченные по значению копии внутри лямбды;
   исходные переменные при этом не меняются.
 
 ## Стандартная библиотека
@@ -36,6 +37,10 @@
 - [x] [std::function, std::bind и делегаты](functional/notes.md) — теория,
   [примеры](functional/examples.cpp) и [практика](functional/practice.md);
   `std::ref`, `std::cref`, время жизни обработчиков.
+- [x] [Механизм событий](functional/events.md) — несколько подписчиков,
+  идентификаторы подписок, отписка и изменение подписок при рассылке.
+- [x] [Делегирование](../patterns/delegate.md) — передача работы другому объекту,
+  варианты через callback и виртуальный интерфейс.
 - [ ] `emplace` и `emplace_back` — создание элементов на месте.
 - [ ] `std::chrono`, `<random>` и `std::to_string`.
 - [ ] `std::thread`, мьютексы, `std::lock_guard`, `std::unique_lock`, `std::condition_variable`.
@@ -55,4 +60,14 @@ cmake --build build --target cpp11_functional_examples
 ./build/c++11/functional/cpp11_functional_examples
 ```
 
-Цель собирается в режиме C++11 независимо от стандарта основной программы.
+Дополнительные цели:
+
+```bash
+cmake --build build --target cpp11_lambda_examples cpp11_event_examples cpp11_event_checks cpp11_delegate_example
+./build/c++11/functional/cpp11_lambda_examples
+./build/c++11/functional/cpp11_event_examples
+./build/c++11/functional/cpp11_event_checks
+./build/c++11/functional/cpp11_delegate_example
+```
+
+Все эти цели собираются в режиме C++11 независимо от стандарта основной программы.
