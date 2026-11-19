@@ -46,6 +46,9 @@
 - [ ] `emplace` и `emplace_back` — создание элементов на месте.
 - [ ] `std::chrono`, `<random>` и `std::to_string`.
 - [ ] `std::thread`, мьютексы, `std::lock_guard`, `std::unique_lock`, `std::condition_variable`.
+- [x] [std::this_thread и std::ref](../c++20/threads/notes.md) — функции текущего
+  потока, обёртки над ссылками, `std::cref`, время жизни и чтение после `join()`;
+  сравнение со `std::jthread` из C++20.
 - [ ] `std::atomic`, гонки данных и основы модели памяти.
 - [ ] `std::async`, `std::future`, `std::promise` — получение результатов асинхронных задач.
 

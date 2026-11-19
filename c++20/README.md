@@ -29,8 +29,26 @@
 
 ## Многопоточность и продвинутые темы
 
-- [ ] `std::jthread` и `std::stop_token` — управление потоком и запрос остановки.
+- [x] [std::jthread и std::stop_token](threads/notes.md) — автоматическое ожидание
+  завершения, запрос остановки, `std::this_thread` и передача ссылок через `std::ref`.
 - [ ] `std::latch`, `std::barrier`, семафоры — синхронизация потоков.
 - [ ] Атомарные `wait`/`notify` и `std::atomic_ref`.
 - [ ] Корутины: `co_await`, `co_yield`, `co_return` и жизненный цикл.
 - [ ] Модули: `export`, `import` и отличие от заголовочных файлов.
+
+Отметка означает, что материалы подготовлены. Самостоятельная практика
+отмечается отдельно.
+
+## Сборка примеров потоков
+
+Из корня проекта:
+
+```bash
+cmake -S . -B build
+cmake --build build --target cpp11_ref_examples cpp11_this_thread_examples cpp20_jthread_examples
+./build/c++20/threads/cpp11_ref_examples
+./build/c++20/threads/cpp11_this_thread_examples
+./build/c++20/threads/cpp20_jthread_examples
+```
+
+Примеры `std::ref` и `std::this_thread` собираются в C++11, `std::jthread` — в C++20.

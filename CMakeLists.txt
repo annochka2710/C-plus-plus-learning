@@ -15,3 +15,4 @@ target_compile_options(main PRIVATE -Wall -Wextra -Wpedantic -Wshadow -Wconversi
 add_subdirectory(c89-90)
 add_subdirectory(c++98)
 add_subdirectory(c++11)
+add_subdirectory(c++20)

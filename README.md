@@ -21,6 +21,7 @@
 | 18 ноября | [C++11: std::function, std::bind и делегаты](c++11/functional/notes.md) | 🟩⬜⬜ |
 | 18 ноября | [Лямбды](c++11/functional/lambdas.md), [события](c++11/functional/events.md) и [делегирование](patterns/delegate.md) | 🟩⬜⬜ |
 | 19 ноября | [using в стандартах C++98–C++23](c++11/using/notes.md) | 🟩⬜⬜ |
+| 19 ноября | [std::jthread, std::this_thread и std::ref](c++20/threads/notes.md) | 🟩⬜⬜ |
 
 Даты ранних тем отражают появление материалов в истории Git; новые записи
 добавляются по дате подготовки материалов. Самостоятельная практика
