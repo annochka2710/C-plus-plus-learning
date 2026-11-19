@@ -18,7 +18,9 @@
 - [ ] Делегирующие конструкторы, наследование конструкторов и инициализаторы полей.
 - [ ] `constexpr`, `static_assert`, `noexcept`.
 - [ ] `enum class` — перечисления с областью видимости.
-- [ ] Variadic templates — пакеты параметров; псевдонимы типов и шаблонов через `using`.
+- [ ] Variadic templates — пакеты параметров шаблона.
+- [x] [using в C++98–C++23](using/notes.md) — псевдонимы типов и шаблонов,
+  наследование конструкторов, сравнение с `typedef` и практика.
 
 ## mutable
 
@@ -71,3 +73,8 @@ cmake --build build --target cpp11_lambda_examples cpp11_event_examples cpp11_ev
 ```
 
 Все эти цели собираются в режиме C++11 независимо от стандарта основной программы.
+
+Для [модуля using](using/notes.md#сборка-и-наблюдение-за-выводом) есть отдельные
+цели `cpp98_using_examples`, `cpp11_using_examples`, `cpp14_using_examples`,
+`cpp17_using_examples`, `cpp20_using_examples` и `cpp23_using_examples`.
+Они собирают один файл в разных стандартах для сравнения возможностей.
